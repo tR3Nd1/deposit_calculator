@@ -3,17 +3,19 @@
 int check (int inmoney, int time)
 {
 	if (inmoney >= 10000 && time <=365){
-		return 1;}
-	else return 0;
+		return 0;
+	}
+	else return 1;
 }
 
 
 void check_per (int inmoney, int *percent)
 {
 	if (inmoney <= 100000 && inmoney >= 10000){
-		*percent=0;}
+		*percent = 0;
+	}
 	else{
-		*percent=1;
+		*percent = 1;
 	}
 }
 
@@ -24,10 +26,10 @@ int main ()
 	float outmoney;
 	do {	
 		printf ("Введите сумму вклада:");
-		scanf ("%d", &inmoney);
+		scanf ("%d", &inmoney);	
 		printf ("Введите время вклада:");
 		scanf ("%d", &time);
-	} while (check(inmoney, time)==0);
+	} while (check(inmoney, time)==1);
 
 	
 	check_per(inmoney, &percent);	
